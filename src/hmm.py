@@ -56,7 +56,7 @@ def read_data(experiment):
 
 class HMM:
 
-    def fit(self, A, B, pi, observations, vocabulary, iterations=300):
+    def fit(self, A, B, pi, observations, vocabulary, iterations=3000):
         """
         Forward-backward algorithm
         :param A: a transaction probability matrix
@@ -220,7 +220,7 @@ class HMM:
 
 if __name__ == '__main__':
     np.set_printoptions(suppress=True)
-    observations, vocabulary = read_data("HHHHHHHHHHHHHHHHH")
+    observations, vocabulary = read_data("TTTTTTTTTTTTTTTTTTHHHHHHHHHHHHHHHHHH")
 
     # train HMM
     hmm = HMM()
