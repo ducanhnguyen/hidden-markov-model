@@ -20,7 +20,7 @@ I just implemented this tutorial without any further optimizations.
 
 In order to check the correctness of HMM, I use the following tests.
 
-<b>Test 0: we observe a sequence of observances, including 'H' and 'T', interchangeably. </b>
+<b>Test 0: we observe a sequence of 'H' and 'T' interchangeably. </b>
   
 <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm-test0.png" width="450">
 
