@@ -16,3 +16,12 @@ Link tutorial: <a href="https://web.stanford.edu/~jurafsky/slp3/A.pdf">HMM (stan
 I just implemented this tutorial without any further optimizations.
 
 <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_train.png" width="750">
+
+
+In order to check the correctness of HMM, I use the following tests.
+
+<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test0.png" width="750">
+
+<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test1.png" width="750">
+
+<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test2.png" width="750">
