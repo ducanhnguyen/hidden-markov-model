@@ -20,8 +20,14 @@ I just implemented this tutorial without any further optimizations.
 
 In order to check the correctness of HMM, I use the following tests.
 
-<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test0.png" width="750">
+<b>Test 0: we observe a sequence of observances, including 'H' and 'T', interchangeably. </b>
+  
+<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm-test0.png" width="450">
 
-<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test1.png" width="750">
+<b> Test 1: we only observe a sequence of tails. </b>
+  
+<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm-test1.png" width="450">
 
-<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test2.png" width="750">
+<b> Test 1: we only observe a sequence of heads. </b>
+
+<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm-test2.png" width="450">
