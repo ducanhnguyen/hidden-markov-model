@@ -220,7 +220,7 @@ class HMM:
 
 if __name__ == '__main__':
     np.set_printoptions(suppress=True)
-    observations, vocabulary = read_data("THTHTHTHTHTHTHTHTH")
+    observations, vocabulary = read_data("HHHHHHHHHHHHHHHHH")
 
     # train HMM
     hmm = HMM()
