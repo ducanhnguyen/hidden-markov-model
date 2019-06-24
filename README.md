@@ -32,6 +32,6 @@ In order to check the correctness of HMM, I use the following tests.
 
 <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm-test2.png" width="450">
 
-<b> Test 3: we only observe a sequence of heads first, followed by a sequcne of tails. </b>
+<b> Test 3: we observe a sequence of heads first, followed by a sequence of tails. </b>
 
 <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm-test4.png" width="750">
