@@ -19,7 +19,7 @@ I just implemented this tutorial without any further optimizations.
 
 In order to check the correctness of HMM, I use the following tests.
 
-<table bgcolor="white">
+<table>
   <tr>
     <td>
       <b>Test 0</b>: we observe a sequence of 'H' and 'T' interchangeably.<br/>
@@ -31,6 +31,9 @@ In order to check the correctness of HMM, I use the following tests.
       <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test1.png" width="250">
     </td>
   </tr>
+</table>
+
+<table>
   <tr>
     <td>
       <b>Test 2</b>: we only observe a sequence of heads. </br>
