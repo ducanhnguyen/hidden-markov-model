@@ -24,20 +24,20 @@ In order to check the correctness of HMM, I use the following tests.
   
 sequence = "THTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTH"
 
-<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm-test0.png" width="450">
+<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test0.png" width="450">
 
 <b> Test 1: we only observe a sequence of tails. </b>
   
-<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm-test1.png" width="450">
+<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test1.png" width="450">
 
 <b> Test 2: we only observe a sequence of heads. </b>
 
 sequence = "HHHHHHHHHHHHHHHHHHHHHHHHHHH"
 
-<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm-test2.png" width="450">
+<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test2.png" width="450">
 
 <b> Test 3: we observe a sequence of heads first, followed by a sequence of tails. </b>
 
 sequence = "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
 
-<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm-test3.png" width="750">
+<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test3.png" width="750">
