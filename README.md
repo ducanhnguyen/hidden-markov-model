@@ -23,8 +23,8 @@ In order to check the correctness of HMM, I use the following tests.
   <tr>
     <td>
       <b>Test 0</b>: we observe a sequence of 'H' and 'T' interchangeably.<br/>
-      sequence = "THTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTH"<br/>
-      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test0.png" width="300">
+      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test0.png" width="300"><br/>
+      sequence = "THTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTH"
     </td>
     <td>
       <b>Test 1</b>: we only observe a sequence of tails.<br/>
@@ -34,13 +34,13 @@ In order to check the correctness of HMM, I use the following tests.
   <tr>
     <td>
       <b>Test 2</b>: we only observe a sequence of heads. </br>
-      sequence = "HHHHHHHHHHHHHHHHHHHHHHHHHHH"<br/>
-      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test2.png" width="250">
+      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test2.png" width="250"><br/>
+      sequence = "HHHHHHHHHHHHHHHHHHHHHHHHHHH"
     </td>
     <td>
       <b>Test 3</b>: we observe a sequence of heads first, followed by a sequence of tails. </br>
-      sequence = "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT<br/>HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"</br>
-      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test3.png" width="350">
+      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test3.png" width="350"></br>
+      sequence = "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT<br/>HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
     </td>
   </tr>
 </table>
