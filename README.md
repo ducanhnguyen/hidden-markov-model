@@ -7,7 +7,7 @@ Hidden markov model
 <b>Example of hidden markov model</b>
 <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_example.png" width="750">
 
-## Train HMM (forward-backward algorithm) for a sequence of discrete observations
+## Train HMM for a sequence of discrete observations
 
 Problem: Given a sequence of discrete observations, train a HMM
 
@@ -44,3 +44,7 @@ In order to check the correctness of HMM, I use the following tests.
     </td>
   </tr>
 </table>
+
+## Train HMM for multiple sequences of discrete observations
+
+<a href="https://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf">Tutorial</a>
