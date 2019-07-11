@@ -51,3 +51,29 @@ In order to check the correctness of HMM, I use the following tests.
 ## Train HMM for multiple sequences of discrete observations
 
 <a href="https://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf">Tutorial</a>
+
+<b>Test 0</b>. Two sequences. Sequence 1 = "TTTTTTTTTTTTTTTTTTTTTTT". Sequence 2= "HHHHHHHHHHHHHHHHHHHHHHHH"
+
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test4.png" width="350">
+    </td>
+    <td>
+      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test4_likelihood.png" width="350">
+    </td>
+  </tr>
+ </table>
+ 
+<b>Test 1</b>. Two sequences. Sequence 1 = "THTHTHTHTHTHTHTHTHTHTHTHTH". Sequence 2= "THTHTHTHTHTHTHTH"
+  
+<table>
+  <tr>
+    <td>
+      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test5.png" width="350">
+    </td>
+    <td>
+      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test5_likelihood.png" width="350">
+    </td>
+  </tr>
+ </table>
