@@ -9,7 +9,7 @@ Hidden markov model
 
 ### Train HMM (forward-backward algorithm)
 
-Problem: Given a sequence of observations, train HMM
+Problem: Given a sequence of discrete observations, train a HMM
 
 Link tutorial: <a href="https://web.stanford.edu/~jurafsky/slp3/A.pdf">HMM (standford)</a>
 
