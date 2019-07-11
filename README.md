@@ -19,7 +19,7 @@ I just implemented this tutorial without any further optimizations.
 
 In order to check the correctness of HMM, I use the following tests.
 
-<table>
+<table bgcolor="white">
   <tr>
     <td>
       <b>Test 0</b>: we observe a sequence of 'H' and 'T' interchangeably.<br/>
