@@ -60,7 +60,7 @@ In order to check the correctness of HMM, I use the following tests.
       <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test4.png" width="350">
     </td>
     <td>
-      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test4_likelihood.png" width="350">
+      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test4_loglikelihood.png" width="350">
     </td>
   </tr>
  </table>
@@ -73,7 +73,7 @@ In order to check the correctness of HMM, I use the following tests.
       <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test5.png" width="350">
     </td>
     <td>
-      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test5_likelihood.png" width="350">
+      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test5_loglikelihood.png" width="350">
     </td>
   </tr>
  </table>
