@@ -50,9 +50,11 @@ In order to check the correctness of HMM, I use the following tests.
 
 ## Train HMM for multiple sequences of discrete observations
 
-<a href="https://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf">Tutorial</a>
+This is the raw implementation based on <a href="https://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf">this utorial</a>
 
-<b>Test 0</b>. Two sequences. 
+In order to check the correctness of HMM, I use the following tests.
+
+<b>Test 0</b>. Consider two sequences. 
 
 Sequence 1 = "TTTTTTTTTTTTTTTTTTTTTTT". 
 
@@ -69,7 +71,7 @@ Sequence 2= "HHHHHHHHHHHHHHHHHHHHHHHH"
   </tr>
  </table>
  
-<b>Test 1</b>. Two sequences. 
+<b>Test 1</b>. Consider two sequences. 
 
 Sequence 1 = "THTHTHTHTHTHTHTHTHTHTHTHTH".
 
