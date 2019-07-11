@@ -25,7 +25,7 @@ For example: Toss a coin
 '''
 import numpy as np
 from graphviz import Digraph
-
+import matplotlib.pyplot as plt
 
 def read_data(experiments):
     sequences = []
@@ -57,7 +57,7 @@ class HMMD:
     def __init__(self, num_of_hidden_states):
         self.num_of_hidden_states = num_of_hidden_states  # number of hidden states
 
-    def fit(self, A, B, pi, sequences, vocabulary, iterations=6000):
+    def fit(self, A, B, pi, sequences, vocabulary, max_iterations=6000, converge_threshold = 1e-15):
         """
         Forward-backward algorithm
         :param A: a transaction probability matrix
@@ -65,7 +65,7 @@ class HMMD:
         :param pi: an initial probability distribution
         :param sequences:
         :param vocabulary:
-        :param iterations:
+        :param max_iterations:
         :return:
         """
         print('A: ' + str(A))
@@ -73,9 +73,11 @@ class HMMD:
         print('pi: ' + str(pi))
         print('vocabulary: ' + str(vocabulary))
 
-        for iteration in range(iterations):
+        log_likelihood_arr = []
+        for iteration in range(max_iterations):
             print('\niteration ' + str(iteration))
 
+            # EM algorithm
             zeta_arr = []
             gama_arr = []
             anpha_arr = []
@@ -93,14 +95,33 @@ class HMMD:
                 zeta = self.compute_zeta(sequence, anpha, beta, A, B)
                 zeta_arr.append(zeta)
 
-            # M-step
-            self.compute_A(A, zeta_arr, sequences, anpha_arr)
-            self.compute_B(gama_arr, B, sequences, vocabulary, anpha_arr)
+            # compute likelihood of all sequences before update
+            log_likelihood = 0
+            for idx, _ in enumerate(sequences):
+                log_likelihood += np.log(self.compute_P_O_given_lambda(anpha_arr[idx]))
+            print('Log P_O_given_lambda = ' + str(log_likelihood))
+            log_likelihood_arr.append(log_likelihood)
 
-            print('A: ' + str(A))
-            print('B: ' + str(B))
-            print('pi: ' + str(pi))
-            print('vocabulary: ' + str(vocabulary))
+            # check convergence
+            if len(log_likelihood_arr) >=2 and np.abs(log_likelihood_arr[-2] - log_likelihood_arr[-1]) == 0:
+                # converge now. no need to update A and B.
+                break
+            else:
+                # M-step
+                self.compute_A(A, zeta_arr, sequences, anpha_arr)
+                self.compute_B(gama_arr, B, sequences, vocabulary, anpha_arr)
+
+        # just for testing
+        print('final A: ' + str(A))
+        print('final B: ' + str(B))
+        print('final pi: ' + str(pi))
+        print('vocabulary: ' + str(vocabulary))
+
+        plt.plot(range(len(log_likelihood_arr)), log_likelihood_arr)
+        plt.title('Log Likelihood over iterations')
+        plt.xlabel('Iteration')
+        plt.ylabel('Log likelihood')
+        plt.show()
 
     def initialize_hmm_parameters(self, vocabulary_size):
         """
@@ -295,11 +316,11 @@ class HMMD:
         # add weights
         for i in range(A.shape[0]):
             for j in range(A.shape[1]):
-                dot.edge('s' + str(i), 's' + str(j), label=str('%.2f' % A[i, j]))
+                dot.edge('s' + str(i), 's' + str(j), label=str('%.3f' %A[i, j]))
 
         for i in range(B.shape[0]):
             for j in range(B.shape[1]):
-                dot.edge('s' + str(i), 'o' + str(j), label=str('%.2f' % B[i, j]))
+                dot.edge('s' + str(i), 'o' + str(j), label=str('%.3f' %B[i, j]))
 
         dot.attr(label='# sequences = ' + str(len(sequences)))
         dot.render('../../graph-output/hmm_graph.gv', view=True)
@@ -310,7 +331,7 @@ if __name__ == '__main__':
 
     # the size of vocabulary = 2 (i.e., T means tail, H means head)
     # two sequences
-    sequences, vocabulary = read_data(["TTTTTTTTTTTTTTTTTTTTTTTTTTTTT", "HHHHHHHHHHHHHHHHHHHHHHHHHH"])
+    sequences, vocabulary = read_data(["TTTTTTTTTTTTTTTTTTTTTTT", "HHHHHHHHHHHHHHHHHHHHHHHH"])
 
     # train HMM
     hmm = HMMD(num_of_hidden_states=2)  # we can choose a different number of hidden states
