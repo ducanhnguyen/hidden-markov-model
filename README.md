@@ -19,24 +19,28 @@ I just implemented this tutorial without any further optimizations.
 
 In order to check the correctness of HMM, I use the following tests.
 
-<b>Test 0: we observe a sequence of 'H' and 'T' interchangeably. </b>
-  
-sequence = "THTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTH"
-
-<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test0.png" width="300">
-
-<b> Test 1: we only observe a sequence of tails. </b>
-  
-<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test1.png" width="300">
-
-<b> Test 2: we only observe a sequence of heads. </b>
-
-sequence = "HHHHHHHHHHHHHHHHHHHHHHHHHHH"
-
-<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test2.png" width="300">
-
-<b> Test 3: we observe a sequence of heads first, followed by a sequence of tails. </b>
-
-sequence = "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
-
-<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test3.png" width="350">
+<table>
+  <tr>
+    <td>
+      <b>Test 0</b>: we observe a sequence of 'H' and 'T' interchangeably.<br/>
+      sequence = "THTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTH"<br/>
+      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test0.png" width="300">
+    </td>
+    <td>
+      <b>Test 1</b>: we only observe a sequence of tails.<br/>
+      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test1.png" width="250">
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <b>Test 2</b>: we only observe a sequence of heads. </br>
+      sequence = "HHHHHHHHHHHHHHHHHHHHHHHHHHH"<br/>
+      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test2.png" width="250">
+    </td>
+    <td>
+      <b>Test 3</b>: we observe a sequence of heads first, followed by a sequence of tails. </br>
+      sequence = "TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT<br/>HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"</br>
+      <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_test3.png" width="350">
+    </td>
+  </tr>
+</table>
