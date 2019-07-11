@@ -5,9 +5,11 @@ import numpy as np
 
 
 def read_data():
-    f = open("../data/nguyen-binh.txt")
-    poem = f.read()
+    poem = open("../data/nguyen-binh.txt").read()
+    poem += open("../data/truyen_kieu.txt").read()
+
     lines = poem.lower().split("\n")
+
     return lines
 
 
