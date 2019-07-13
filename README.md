@@ -55,9 +55,23 @@ In order to check the correctness of HMM, I use the following tests.
   </tr>
 </table>
 
+## Train HMM for a sequence of discrete observations (tf version)
+
+Although I implemented HMM for a sequence of discrete observation based on the original algorithm, I still continue with a new way: facilitate the ability of gradient computation provided by TensorFlow.
+
+The method contains two main steps:
+
+- Step1: Define the loss function.
+
+Here, the loss is a negative likelihood. We usually try to maximize the likelihood, which is known as the maximum likelihood estimation (MAE). In other words, we would minimize the negative likelihood.
+
+- Step 2: Choose an adaptive learning rate optimizer such as Adam, then train the model under a number of iterations.
+
+Results: A, B, pi (which minimize the loss)
+
 ## Train HMM for multiple sequences of discrete observations
 
-This is the raw implementation based on <a href="https://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf">this utorial</a>
+This is the raw implementation based on <a href="https://www.ece.ucsb.edu/Faculty/Rabiner/ece259/Reprints/tutorial%20on%20hmm%20and%20applications.pdf">this tutorial</a>
 
 In order to check the correctness of HMM, I use the following tests.
 
@@ -94,3 +108,25 @@ Sequence 2= "THTHTHTHTHTHTHTH"
     </td>
   </tr>
  </table>
+
+## Train HMM for multiple sequences of discrete observations (tf version)
+
+In this part, I will train HMM using tensorflow (i.e., not use the original algorithm).
+
+<b>Experiment</b>
+
+Traing:
+
+- Sequence 1: TTTTTTTTTTTTTTTTTTTTTTTTTTTHTTTT
+
+- Sequence 2: HHHHHHHHHHHHHHHTHHHHHHHHH
+
+Testing
+
+| Test | Probability | Log probability |
+| ------------- | ------------- | ------------- |
+|  THTHTHTHTHTHTHTHTHTHTH |  4.723788581964585e-16 | -35.28875034460062 |
+|  TTTTTTTTTTTTTTTTTTTTTT |  0.8191389207730484 |-0.1995015870798115|
+|  HHHHHHHHHHHHHHHHHHHHHH |  0.6648675313118346 |-0.40816745920427944|
+|  TTTTTTTTTHTTTTTTTTTTTT |  0.02642439012907365 | -3.633467826808207|
+| TTTTTTTTTHTTTTTTHTTTTTT  |  0.0008257384866132875 | -7.099232436735432|
