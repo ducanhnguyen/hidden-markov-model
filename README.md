@@ -121,7 +121,17 @@ Training
 
 - Sequence 2: HHHHHHHHHHHHHHHTHHHHHHHHH
 
-Testing: 
+Before the training process, we can guess that:
+
+- Guess 1: On HMM, the probability of transactions from T to H, or H to T are very low.
+
+- Guess 2: On HMM, the probability of transactions from T to T, or H to H are very high.
+
+After the training process, the HMM is as follows. This HMM is identical to what we have guessed before.
+
+<img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmmd_tf_1.png" width="450">
+
+Testing
 
 - Expectation: The probability of test 2 and 3 should be very high. The probability of test 1, 4, 5 should be very low. The probability of test 4 should be higher than that of test 5.
 
