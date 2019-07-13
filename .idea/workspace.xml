@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ce9e48e-358f-4bc2-ac44-526f14b5bd85" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/hmmd_tf2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hmmd.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/hmmd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hmmd_2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/hmmd_2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hmmd_tf.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/hmmd_tf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/poem_classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/poem_classification.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hmmd_tf2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/hmmd_tf2.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,32 +21,32 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/poem_classification.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#10#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-763">
+              <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/nguyen-binh.txt">
+        <entry file="file://$PROJECT_DIR$/src/hmmd_tf.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2503">
-              <caret line="2396" column="26" lean-forward="true" selection-start-line="2396" selection-start-column="26" selection-end-line="2396" selection-end-column="26" />
+            <state relative-caret-position="256">
+              <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/hmmd_tf2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" selection-start-line="11" selection-end-line="271" />
+            <state relative-caret-position="297">
+              <caret line="291" column="39" lean-forward="true" selection-start-line="291" selection-start-column="39" selection-end-line="291" selection-end-column="39" />
+              <folding>
+                <element signature="e#279#289#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,8 +136,8 @@
         <option value="$PROJECT_DIR$/src/hmmd.py" />
         <option value="$PROJECT_DIR$/src/HMMD_utilities.py" />
         <option value="$PROJECT_DIR$/src/hmmd_tf.py" />
-        <option value="$PROJECT_DIR$/src/hmmd_tf2.py" />
         <option value="$PROJECT_DIR$/src/poem_classification.py" />
+        <option value="$PROJECT_DIR$/src/hmmd_tf2.py" />
       </list>
     </option>
   </component>
@@ -189,7 +183,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/img" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -214,7 +208,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.hmmd">
+  <component name="RunManager" selected="Python.hmmd_tf2">
     <configuration name="HMMD_utilities" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="hmm" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -322,9 +316,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.hmmd_tf2" />
         <item itemvalue="Python.hmmd" />
         <item itemvalue="Python.poem_classification" />
-        <item itemvalue="Python.hmmd_tf2" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.HMMD_utilities" />
       </list>
@@ -535,13 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hmmd_tf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="113" column="26" lean-forward="true" selection-start-line="113" selection-start-column="26" selection-end-line="113" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hmm1_A.csv">
       <provider editor-type-id="csv-table-editor">
         <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
@@ -706,13 +693,6 @@
         <state relative-caret-position="-48401" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/nguyen-binh.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2503">
-          <caret line="2396" column="26" lean-forward="true" selection-start-line="2396" selection-start-column="26" selection-end-line="2396" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/HMMD_utilities.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1017">
@@ -727,13 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="52" lean-forward="true" selection-start-line="3" selection-end-line="3" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hmmd_tf2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" selection-start-line="11" selection-end-line="271" />
         </state>
       </provider>
     </entry>
@@ -761,12 +734,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/data/nguyen-binh.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2503">
+          <caret line="2396" column="26" lean-forward="true" selection-start-line="2396" selection-start-column="26" selection-end-line="2396" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/poem_classification.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="3" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        <state relative-caret-position="-763">
+          <caret line="12" column="10" lean-forward="true" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hmmd_tf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hmmd_tf2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="291" column="39" lean-forward="true" selection-start-line="291" selection-start-column="39" selection-end-line="291" selection-end-column="39" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#279#289#0" expanded="true" />
           </folding>
         </state>
       </provider>

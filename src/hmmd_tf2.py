@@ -275,15 +275,14 @@ if __name__ == '__main__':
     np.set_printoptions(suppress=True)
 
     # Step 1. train HMM
-    '''
     # The value of hyperparameters (e.g., A, B, pi) will be stored in external files for further usages.
     hmm = HMMD_TF()  # we can choose a different number of hidden states
     # the size of vocaburary = 2 (i.e., T means tail, H means head)
-    experiments = ["T T T T T T T T T T T T T T T T T T T T T T T T T T T T H T T", "H H H H H H H H H H H H H H H H H H T H H H H H H"]
-    sequences, vocabulary = hmm.load_data(experiments, split_level='WORD')
-    hmm.fit(sequences, vocabulary, n_hidden_states=2, matrix_prefix='../hmm_')
+    experiments = ["TTTTTTTTTTTTTTTTTTTTTTTTTTTHTTTT", "HHHHHHHHHHHHHHHTHHHHHHHHH"]
+    sequences, vocabulary = hmm.load_data(experiments, split_level='CHARACTER')
+    hmm.fit(sequences, vocabulary, n_hidden_states=2, matrix_prefix='../hmm_', prefix='')
     hmm.draw()
-    '''
+
 
     # Step 2. test HMM
     # You can load hyperparameter files without training anymore.
@@ -291,11 +290,11 @@ if __name__ == '__main__':
     hmm2 = HMMD_TF()  # no need to specify the number of hidden states
     hmm2.read(A_path='../hmm_logA.csv', B_path='../hmm_logB.csv', pi_path='../hmm_logpi.csv',
               vocabulary_path='../hmm_vocabulary.csv')
-    Xtest = ["T H T H T H T H T H T H T H T H",
-             "T T T T T T T T T T T T T T T T",
-             "H H H H H H H H H H H H H H H H",
-             "H H H T H H H H H H T H H H H H",
-             "H H H H H H H H H H T H H H H H"]
-    likelihood_arr = hmm2.compute_likelihood(Xtest, split_level='WORD')
+    Xtest = ["THTHTHTHTHTHTHTHTHTHTH",
+             "TTTTTTTTTTTTTTTTTTTTTT",
+             "HHHHHHHHHHHHHHHHHHHHHH",
+             "TTTTTTTTTHTTTTTTTTTTTT",
+             "TTTTTTTTTHTTTTTTHTTTTTT"]
+    likelihood_arr = hmm2.compute_likelihood(Xtest, split_level='CHARACTER')
     for sequence, likelihood in zip(Xtest, likelihood_arr):
         print(f'Test {sequence} : probability = {likelihood} (log of probability = {np.log(likelihood)})')
