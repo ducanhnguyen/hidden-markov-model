@@ -1,7 +1,15 @@
 # hidden-markov-model
-Hidden markov model
+This is implementation of hidden markov model.
 
-<b>Definition of hidden markov model</b>
+Next works:
+
+- Implement HMM for single/multiple sequences of continuous obervations.
+
+- Scaling HMM: With the too long sequences, the probability of these sequences may move to zero. This problem is the same as the vanishing gradient descent in deep learning.
+
+- HMM for classification: I have implemented HMM for classification. However, there are two main problems: (1) low accuracy, not over 50% for binary classification, (2) too long training time when training on the local machine (and also in google colab).
+
+### Definition of hidden markov model
 <img src="https://github.com/ducanhnguyen/hidden-markov-model/blob/master/img/hmm_definition.png" width="750">
 
 <b>Example of hidden markov model</b>
