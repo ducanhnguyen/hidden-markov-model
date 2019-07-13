@@ -115,18 +115,22 @@ In this part, I will train HMM using tensorflow (i.e., not use the original algo
 
 <b>Experiment</b>
 
-Traing:
+Traing
 
 - Sequence 1: TTTTTTTTTTTTTTTTTTTTTTTTTTTHTTTT
 
 - Sequence 2: HHHHHHHHHHHHHHHTHHHHHHHHH
 
-Testing
+Testing: 
 
-| Test | Probability | Log probability |
-| ------------- | ------------- | ------------- |
-|  THTHTHTHTHTHTHTHTHTHTH |  4.723788581964585e-16 | -35.28875034460062 |
-|  TTTTTTTTTTTTTTTTTTTTTT |  0.8191389207730484 |-0.1995015870798115|
-|  HHHHHHHHHHHHHHHHHHHHHH |  0.6648675313118346 |-0.40816745920427944|
-|  TTTTTTTTTHTTTTTTTTTTTT |  0.02642439012907365 | -3.633467826808207|
-| TTTTTTTTTHTTTTTTHTTTTTT  |  0.0008257384866132875 | -7.099232436735432|
+- Expectation: The probability of test 2 and 3 should be very high. The probability of test 1, 4, 5 should be very low. The probability of test 4 should be higher than that of test 5.
+
+- Real result: The result is the same as what we are expected.
+
+| id | Test | Probability | Log probability |
+|  -------------  | ------------- | ------------- | ------------- |
+| 1 |  THTHTHTHTHTHTHTHTHTHTH |  4.723788581964585e-16 | -35.28875034460062 |
+| 2 |  TTTTTTTTTTTTTTTTTTTTTT |  0.8191389207730484 |-0.1995015870798115|
+| 3 |  HHHHHHHHHHHHHHHHHHHHHH |  0.6648675313118346 |-0.40816745920427944|
+| 4 |  TTTTTTTTTHTTTTTTTTTTTT |  0.02642439012907365 | -3.633467826808207|
+| 5 | TTTTTTTTTHTTTTTTHTTTTTT  |  0.0008257384866132875 | -7.099232436735432|
