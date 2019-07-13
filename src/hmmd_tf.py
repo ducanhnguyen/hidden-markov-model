@@ -1,5 +1,5 @@
 """
-The implementation of hidden markov model using tensorflow for an discrete observation sequence.
+The implementation of hidden markov model using tensorflow for a sequence of discrete observations.
 
 This implementation is simpler than the original version.
 
@@ -11,29 +11,13 @@ import tensorflow as tf
 from graphviz import Digraph
 
 
-def read_data(experiment):
-    observations = np.zeros(shape=(len(experiment)))
-    vocabulary = dict()
-
-    for trial_idx in range(0, len(experiment)):
-        trial = experiment[trial_idx]
-
-        if not trial in vocabulary:
-            vocabulary[trial] = len(vocabulary)
-
-        observations[trial_idx] = vocabulary[trial]
-
-    observations = observations.astype(dtype='int')
-    return observations, vocabulary
-
-
-class HMM:
+class HMMD_TF:
     def __init__(self, num_of_hidden_states):
         self.num_of_hidden_states = num_of_hidden_states
 
     def declare_variables(self):
         num_of_vocabularies = len(vocabulary)
-        num_of_observations = len(observations)
+        num_of_observations = len(sequence)
 
         self.tf_observations = tf.compat.v1.placeholder(shape=(num_of_observations,), dtype=tf.int32,
                                                         name='observation')
@@ -108,17 +92,32 @@ class HMM:
             for j in range(self.B.shape[1]):
                 dot.edge('s' + str(i), 'o' + str(j), label=str('%.2f' % self.B[i, j]))
 
-        dot.attr(label='Observations = ' + str(observations) + '\nvocabulary = ' + str(self.vocabulary))
+        dot.attr(label='Observations = ' + str(sequence) + '\nvocabulary = ' + str(self.vocabulary))
         dot.render('../../graph-output/hmm_graph.gv', view=True)
 
+
+def read_data(experiment):
+    sequence = np.zeros(shape=(len(experiment)))
+    vocabulary = dict()
+
+    for trial_idx in range(0, len(experiment)):
+        trial = experiment[trial_idx]
+
+        if not trial in vocabulary:
+            vocabulary[trial] = len(vocabulary)
+
+        sequence[trial_idx] = vocabulary[trial]
+
+    sequence = sequence.astype(dtype='int')
+    return sequence, vocabulary
 
 if __name__ == '__main__':
     np.set_printoptions(suppress=True)
 
     # the size of vocaburary = 2 (i.e., T means tail, H means head)
-    observations, vocabulary = read_data("THTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTH")
+    sequence, vocabulary = read_data("THTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTHTH")
 
     # train HMM
-    hmm = HMM(num_of_hidden_states=2)  # we can choose a different number of hidden states
-    hmm.fit(observations, vocabulary)
+    hmm = HMMD_TF(num_of_hidden_states=2)  # we can choose a different number of hidden states
+    hmm.fit(sequence, vocabulary)
     hmm.draw()

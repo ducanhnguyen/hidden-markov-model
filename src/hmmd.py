@@ -1,7 +1,7 @@
 '''
 The implementation of hidden markov model based on the tutorial: https://web.stanford.edu/~jurafsky/slp3/A.pdf
 
-I would train a HMM model for an discrete observation sequence
+I would train a HMM model for a sequence of discrete observations
 
 Definitions:
 

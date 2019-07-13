@@ -1,21 +1,20 @@
-'''
-The training time is too long with >=100 lines of poem.
-Also, it gives low accuracy.
-Maybe HMM is not suitable for classification when the number of symbols is too large.
-'''
-import sys
-from multiprocessing import Process, current_process
+"""
+The implementation of hidden markov model using tensorflow for multiple sequences of discrete observations.
+
+This implementation is simpler than the original version.
+
+The tutorial of the original version can be found here: https://web.stanford.edu/~jurafsky/slp3/A.pdf
+
+"""
+import csv
+from multiprocessing import current_process
 
 import numpy as np
 import pandas as pd
 import tensorflow as tf
 from graphviz import Digraph
-import csv
-from sklearn.utils import shuffle
-from google.colab import drive
 
 
-@DeprecationWarning
 class HMMD_TF:
     def __init__(self):
         pass
@@ -46,7 +45,7 @@ class HMMD_TF:
 
         return tf_sequences, tf_pi, tf_A, tf_B
 
-    def fit(self, sequences, vocabulary, matrix_prefix, n_hidden_states, prefix, max_iterations=10000,
+    def fit(self, sequences, vocabulary, matrix_prefix, n_hidden_states, prefix, max_iterations=20000,
             convergence_threshold=1e-10):
         self.process_name = prefix + '[' + current_process().name + ']'
         self.vocabulary = vocabulary
@@ -84,21 +83,20 @@ class HMMD_TF:
 
                 cost = session.run(tf_cost, feed_dict)
                 cost_arr.append(cost)
-                if i%100==0:
-                    print(f'{self.process_name} iteration {i}: cost = {cost}')
+                print(f'{self.process_name} iteration {i}: cost = {cost}')
 
                 # save the current value of hyperparameters to file
                 if i % 50 == 0 or i == max_iterations - 1:
                     self.A = session.run(self.tf_A, feed_dict)
                     self.B = session.run(self.tf_B, feed_dict)
                     self.pi = session.run(self.tf_pi, feed_dict)
-                    #print(f'{self.process_name} Export hyperparameters to file')
+                    print(f'{self.process_name} Export hyperparameters to file')
                     self.save(matrix_prefix)
 
                 # check convergence
                 if len(cost_arr) >= 2:
                     delta = np.abs(cost_arr[-2] - cost_arr[-1])
-                    #print(f'{self.process_name} delta = {delta}')
+                    print(f'{self.process_name} delta = {delta}')
                     if delta <= convergence_threshold:
                         # converge now
                         print(f'{self.process_name} Converge now. Stop!')
@@ -230,7 +228,7 @@ class HMMD_TF:
 
         for x, x_transform in zip(X, X_transform):
 
-            #print(f"x = {x} / x_transform = {x_transform}")
+            print(f"x = {x} / x_transform = {x_transform}")
 
             # compute anpha
             last_anpha = np.multiply(self.pi, self.B[:, x_transform[0]])  # 1xN
@@ -273,94 +271,31 @@ class HMMD_TF:
         return sequences, vocabulary
 
 
-def read_data(path, label):
-    X = []
-    y = []
-    poem = open(path).read()
-
-    for line in poem.lower().split("\n"):
-        X.append(line)
-        y.append(label)
-
-    return X, y
-
-
-def train_classifier(poem1, poem2):
-    limit = 100
-
-    # train model 1
-    X1, y1 = read_data(poem1, label=0)
-    X1_train = X1[:limit]
-
-    hmm1 = HMMD_TF()
-    sequences1, vocabulary1 = hmm1.load_data(X1_train, split_level='WORD')
-    process1 = Process(target=hmm1.fit, args=(sequences1, vocabulary1, '/content/drive/My Drive/Colab Notebooks/poem/hmm1_', 20, ''))
-    process1.start()
-
-    # train model 2
-    X2, y2 = read_data(poem2, label=0)
-    X2_train = X2[:limit]
-
-    hmm2 = HMMD_TF()
-    sequences2, vocabulary2 = hmm2.load_data(X2_train, split_level='WORD')
-    process2 = Process(target=hmm2.fit,
-                       args=(sequences2, vocabulary2, '/content/drive/My Drive/Colab Notebooks/poem/hmm2_', 20, '\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t'))
-    process2.start()
-
-    # join all processes
-    process1.join()
-    process2.join()
-
-
-def test(poem1, poem2, base_path):
-    # get data
-    X1, y1 = read_data(poem1, label=0)
-    upper_limit = 1000
-    lower_limit = 100
-    X1_test = X1[lower_limit:upper_limit]
-    y1_test = y1[lower_limit:upper_limit]
-
-    X2, y2 = read_data(poem2, label=1)
-    X2_test = X2[lower_limit:upper_limit]
-    y2_test = y2[lower_limit:upper_limit]
-
-    X_test = np.concatenate([X1_test, X2_test])
-    y_test = np.concatenate([y1_test, y2_test])
-    X_test, y_test = shuffle(X_test, y_test)
-    #print(X_test)
-    # compute likelihood
-    hmm1 = HMMD_TF()
-    hmm1.read(A_path=base_path+"/hmm1_logA.csv", B_path=base_path+"hmm1_logB.csv", pi_path=base_path+"hmm1_logpi.csv",
-              vocabulary_path=base_path+"hmm1_vocabulary.csv")
-    likelihood_arr1 = hmm1.compute_likelihood(X_test, split_level='WORD')
-    print(f'log likelihood_arr1: {likelihood_arr1}')
-
-    hmm2 = HMMD_TF()
-    hmm2.read(A_path=base_path+"hmm2_logA.csv", B_path=base_path+"hmm2_logB.csv", pi_path=base_path+"hmm2_logpi.csv",
-              vocabulary_path=base_path+"hmm2_vocabulary.csv")
-    likelihood_arr2 = hmm2.compute_likelihood(X_test, split_level='WORD')
-    print(f'log likelihood_arr2: {likelihood_arr2}')
-
-    # compute socre
-    yhat = np.argmax([likelihood_arr1, likelihood_arr2], axis=0)
-    print(f'True ground: {y_test}')
-    print(f'Prediction : {yhat}')
-    score = np.mean(yhat == y_test)
-    print(f'accuracy = {score}')
-
-
 if __name__ == '__main__':
-    np.set_printoptions(threshold=sys.maxsize)
-    basepath = ''
-    GOOGLE_COLAB = False
-    if GOOGLE_COLAB:
-        # run on colab, but it is still too long
-        drive.mount('/content/drive')
-        base_path = "/content/drive/My Drive/Colab Notebooks/poem/"
-        train_classifier(poem1="/content/drive/My Drive/Colab Notebooks/poem/nguyen-binh.txt",poem2="/content/drive/My Drive/Colab Notebooks/poem/truyen_kieu.txt")
-        test(poem1=base_path+"nguyen-binh.txt",poem2=base_path+"truyen_kieu.txt", base_path=base_path)
-    else:
-        # run on local machine
-        basepath='../data/'
-        #train_classifier(poem1= "../data/nguyen-binh.txt", poem2 = "../data/truyen_kieu.txt")
-        test(poem1= "../data/nguyen-binh.txt", poem2 = "../data/truyen_kieu.txt", base_path="../")
+    np.set_printoptions(suppress=True)
+
+    # Step 1. train HMM
+    '''
+    # The value of hyperparameters (e.g., A, B, pi) will be stored in external files for further usages.
+    hmm = HMMD_TF()  # we can choose a different number of hidden states
+    # the size of vocaburary = 2 (i.e., T means tail, H means head)
+    experiments = ["T T T T T T T T T T T T T T T T T T T T T T T T T T T T H T T", "H H H H H H H H H H H H H H H H H H T H H H H H H"]
+    sequences, vocabulary = hmm.load_data(experiments, split_level='WORD')
+    hmm.fit(sequences, vocabulary, n_hidden_states=2, matrix_prefix='../hmm_')
+    hmm.draw()
+    '''
+
+    # Step 2. test HMM
+    # You can load hyperparameter files without training anymore.
+    print('Test. Read weights from file')
+    hmm2 = HMMD_TF()  # no need to specify the number of hidden states
+    hmm2.read(A_path='../hmm_logA.csv', B_path='../hmm_logB.csv', pi_path='../hmm_logpi.csv',
+              vocabulary_path='../hmm_vocabulary.csv')
+    Xtest = ["T H T H T H T H T H T H T H T H",
+             "T T T T T T T T T T T T T T T T",
+             "H H H H H H H H H H H H H H H H",
+             "H H H T H H H H H H T H H H H H",
+             "H H H H H H H H H H T H H H H H"]
+    likelihood_arr = hmm2.compute_likelihood(Xtest, split_level='WORD')
+    for sequence, likelihood in zip(Xtest, likelihood_arr):
+        print(f'Test {sequence} : probability = {likelihood} (log of probability = {np.log(likelihood)})')
