@@ -111,11 +111,11 @@ Sequence 2= "THTHTHTHTHTHTHTH"
 
 ## Train HMM for multiple sequences of discrete observations (tf version)
 
-In this part, I will train HMM using tensorflow (i.e., not use the original algorithm).
+In this part, I will train HMM using TensorFlow (i.e., not use the original algorithm).
 
 <b>Experiment</b>
 
-Traing
+Training
 
 - Sequence 1: TTTTTTTTTTTTTTTTTTTTTTTTTTTHTTTT
 
