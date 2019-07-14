@@ -143,7 +143,7 @@ Testing
 
 - Expectation: The probability of test 2 and 3 should be very high. The probability of test 1, 4, 5 should be very low. The probability of test 4 should be higher than that of test 5.
 
-- Real result: The result is the same as what we are expected.
+- Real result: The result is the same as what we expected.
 
 | id | Test | Probability | Log probability |
 |  -------------  | ------------- | ------------- | ------------- |
