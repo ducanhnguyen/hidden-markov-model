@@ -157,9 +157,9 @@ Testing
 
 This is a POS Tagging Technique using HMM.
 
-We do not need to train HMM anymore but we use a simpler approach. Hidden state is pos tagger.
+We do not need to train HMM anymore but we use a simpler approach. Hidden state is pos tag.
 
-Explanation of pos tag can be found here: https://pythonprogramming.net/part-of-speech-tagging-nltk-tutorial/
+Explanation of pos tags can be found here: https://pythonprogramming.net/part-of-speech-tagging-nltk-tutorial/
 
 Dataset: https://www.clips.uantwerpen.be/conll2000/chunking/
 
@@ -169,5 +169,5 @@ Result:
 - Test f1-score = 0.873736957062177
 
 Test with a phrase: "I love you so much"
-- Expected: I ('PRP'), love('VBP'), you('PRP'), so('RB'), much('JJ')
+- Expected pos tags: I ('PRP'), love('VBP'), you('PRP'), so('RB'), much('JJ')
 - Real result: the same
