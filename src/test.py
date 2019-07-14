@@ -85,4 +85,13 @@ def test6():
     print(y)
     z = np.e **y
     print(z)
-test6()
+
+def test7():
+    x1 = np.array([[1, 2], [3, 4]])
+    x2 = np.array([[1, 20], [30, 4]])
+    y = np.mean([x1==x2], axis=None)
+    z = np.concatenate(x1)
+    print(z)
+    print(y)
+
+test7()

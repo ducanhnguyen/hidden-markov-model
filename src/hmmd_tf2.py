@@ -45,7 +45,7 @@ class HMMD_TF:
 
         return tf_sequences, tf_pi, tf_A, tf_B
 
-    def fit(self, sequences, vocabulary, matrix_prefix, n_hidden_states, prefix, max_iterations=20000,
+    def fit(self, sequences, vocabulary, weight_file_prefix, n_hidden_states, prefix, max_iterations=20000,
             convergence_threshold=1e-10):
         self.process_name = prefix + '[' + current_process().name + ']'
         self.vocabulary = vocabulary
@@ -91,7 +91,7 @@ class HMMD_TF:
                     self.B = session.run(self.tf_B, feed_dict)
                     self.pi = session.run(self.tf_pi, feed_dict)
                     print(f'{self.process_name} Export hyperparameters to file')
-                    self.save(matrix_prefix)
+                    self.save(weight_file_prefix)
 
                 # check convergence
                 if len(cost_arr) >= 2:
@@ -152,6 +152,11 @@ class HMMD_TF:
         dot.render('../../graph-output/hmm_graph.gv', view=True)
 
     def save(self, matrix_prefix):
+        '''
+
+        :param matrix_prefix: Example: "../hmm1_"
+        :return:
+        '''
         assert (len(matrix_prefix) > 0)
 
         assert (self.A.shape[0] == self.A.shape[1])
@@ -228,7 +233,7 @@ class HMMD_TF:
 
         for x, x_transform in zip(X, X_transform):
 
-            print(f"x = {x} / x_transform = {x_transform}")
+            #print(f"x = {x} / x_transform = {x_transform}")
 
             # compute anpha
             last_anpha = np.multiply(self.pi, self.B[:, x_transform[0]])  # 1xN
@@ -280,7 +285,7 @@ if __name__ == '__main__':
     # the size of vocaburary = 2 (i.e., T means tail, H means head)
     experiments = ["TTTTTTTTTTTTTTTTTTTTTTTTTTTHTTTT", "HHHHHHHHHHHHHHHTHHHHHHHHH"]
     sequences, vocabulary = hmm.load_data(experiments, split_level='CHARACTER')
-    hmm.fit(sequences, vocabulary, n_hidden_states=2, matrix_prefix='../hmm_', prefix='')
+    hmm.fit(sequences, vocabulary, n_hidden_states=2, weight_file_prefix='../hmm_', prefix='')
     hmm.draw()
 
 
