@@ -1,8 +1,8 @@
 '''
 This is a POS Tagging Technique using HMM.
-We do not need to train HMM anymore but we use a simpler approach. Hidden state is pos tagger.
+We do not need to train HMM anymore but we use a simpler approach. Hidden state is pos tag.
 
-Explanation of pos tag can be found here: https://pythonprogramming.net/part-of-speech-tagging-nltk-tutorial/
+Explanation of pos tags can be found here: https://pythonprogramming.net/part-of-speech-tagging-nltk-tutorial/
 Dataset: https://www.clips.uantwerpen.be/conll2000/chunking/
 
 Result:

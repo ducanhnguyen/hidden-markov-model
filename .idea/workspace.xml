@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0ce9e48e-358f-4bc2-ac44-526f14b5bd85" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/data/chunking/test.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/chunking/train.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pos.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hmm_logA.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hmm_logB.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hmm_logpi.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hmm_vocabulary.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hmmd_tf2.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/hmmd_tf2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/poem_classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/poem_classification.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pos.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/pos.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pos.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+            <state relative-caret-position="324">
+              <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
               <folding>
                 <element signature="e#376#386#0" expanded="true" />
               </folding>
@@ -341,18 +332,18 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.39274448" visible="true" weight="0.15221988" />
-      <window_info id="Structure" order="1" sideWeight="0.6072555" side_tool="true" visible="true" weight="0.15221988" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.39212328" visible="true" weight="0.15221988" />
+      <window_info id="Structure" order="1" sideWeight="0.6078767" side_tool="true" visible="true" weight="0.15221988" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32771084" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23614457" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23614457" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3295583" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.29638556" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.29638556" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -558,8 +549,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pos.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
+        <state relative-caret-position="324">
+          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
           <folding>
             <element signature="e#376#386#0" expanded="true" />
           </folding>
