@@ -168,6 +168,6 @@ Result:
 - Training f1-score = 0.9241242452935616
 - Test f1-score = 0.873736957062177
 
-Test  with a phrases: "I love you so much"
+Test with a phrase: "I love you so much"
 - Expected: I ('PRP'), love('VBP'), you('PRP'), so('RB'), much('JJ')
 - Real result: the same
