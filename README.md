@@ -152,3 +152,22 @@ Testing
 | 3 |  HHHHHHHHHHHHHHHHHHHHHH |  0.6648675313118346 |-0.40816745920427944|
 | 4 |  TTTTTTTTTHTTTTTTTTTTTT |  0.02642439012907365 | -3.633467826808207|
 | 5 | TTTTTTTTTHTTTTTTHTTTTTT  |  0.0008257384866132875 | -7.099232436735432|
+
+# POS Tagger using HMM
+
+This is a POS Tagging Technique using HMM.
+
+We do not need to train HMM anymore but we use a simpler approach. Hidden state is pos tagger.
+
+Explanation of pos tag can be found here: https://pythonprogramming.net/part-of-speech-tagging-nltk-tutorial/
+
+Dataset: https://www.clips.uantwerpen.be/conll2000/chunking/
+
+Result:
+
+- Training f1-score = 0.9241242452935616
+- Test f1-score = 0.873736957062177
+
+Test  with a phrases: "I love you so much"
+- Expected: I ('PRP'), love('VBP'), you('PRP'), so('RB'), much('JJ')
+- Real result: the same
